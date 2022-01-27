@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
+import LoginButton from './LoginButton'
+
 
 const LoginForm = () => {
     const [values, setValues] = React.useState({
@@ -62,6 +64,7 @@ const LoginForm = () => {
                     label="Password"
                 />
             </FormControl>
+            <LoginButton />
         </Box>
     )
 }

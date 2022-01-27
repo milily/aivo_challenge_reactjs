@@ -1,14 +1,21 @@
-import { Fragment } from 'react/cjs/react.production.min';
 import Login from './components/login/Login';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom'
+
 
 
 function App() {
     return (
-        <Fragment>
-            <h1>Star Kitty+ Plataforma de Streaming</h1>
-            <Login />
-        </Fragment>
+        <Router>
+          <Routes>
+              <Route path="/" element={<Login />}>
+              </Route>
+          </Routes>
+        </Router>
     );
 }
 
