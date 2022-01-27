@@ -1,11 +1,8 @@
 import React, { Fragment, useEffect, useState} from "react";
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from "axios";
-// import SingleCard from "./SingleCard";
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import MovieCard from "./MovieCard";
 
 const Home = () => {
     const {isAuthenticated, isLoading} = useAuth0()
@@ -38,15 +35,9 @@ const Home = () => {
                                 movie.map(singleMovie =>{
                                     return(
                                         <Grid item lg={2} xs={12} md={4}>
-                                            <Card >
-                                                <CardActionArea>
-                                                    <CardMedia
-                                                        component="img"
-                                                        image={singleMovie.images['Poster Art'].url}
-                                                        alt="green iguana"
-                                                    />
-                                                </CardActionArea>
-                                            </Card>
+                                            <MovieCard 
+                                            container
+                                            movieImage={singleMovie.images}/>
                                         </Grid>
                                     )
                                 })
