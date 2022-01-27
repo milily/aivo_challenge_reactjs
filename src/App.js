@@ -6,7 +6,7 @@ import './App.css';
 function App() {
     return (
         <Fragment>
-            <h1>Plataforma de Streaming</h1>
+            <h1>Star Kitty+ Plataforma de Streaming</h1>
             <Login />
         </Fragment>
     );
