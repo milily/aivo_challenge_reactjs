@@ -14,14 +14,14 @@ function App() {
 
   console.log({isAuthenticated, isLoading})
     return (
-        <div className='background'>
-            {isAuthenticated ? (
+        <Fragment>
+          {isAuthenticated ? (
                 <Fragment>
                     <LogoutButton />
                     <Home />
                 </Fragment>
             ): <Login />}
-        </div>
+        </Fragment>
     );
 }
 

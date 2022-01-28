@@ -9,9 +9,8 @@ import Box from '@mui/material/Box';
 const Login = () => {
     return(
         <Fragment>
-            <Grid sx={{width: '100%'}}>
-            <Grid container sx={{ justifyContent: 'center'}}>
-                <Grid item sx={{ m:2}}>
+            <Grid container sx={{ justifyContent: 'center', marginTop: 20}}>
+                <Grid item>
                     <Typography component="div">
                         <Box sx={{ fontFamily: 'Monospace', fontSize: '5rem', fontWeight: 'bold' }}>
                         Star Kitty+
@@ -20,7 +19,7 @@ const Login = () => {
                 </Grid>
             </Grid>
             <Grid container sx={{ justifyContent: 'center'}}>
-                <Grid item>
+                <Grid item >
                     <img
                         width={'300'}
                         src={friendlyKittyIcon}
@@ -37,7 +36,6 @@ const Login = () => {
                 <Grid item>
                     <LoginButton />
                 </Grid>
-            </Grid>
             </Grid>
         </Fragment>
     )
