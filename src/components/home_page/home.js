@@ -28,10 +28,6 @@ const Home = () => {
         console.log(filterByProgramType)
     }
 
-    // const showAllContent = () =>{
-    //     return setMovies(apiData)
-    // }
-
     return(
             <Fragment>
                 <h1>HOLA</h1>
