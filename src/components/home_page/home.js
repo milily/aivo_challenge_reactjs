@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState} from "react";
+import friendlyKittyIcon from '../../assets/images/friendly-kitten-icon.png'
 import Search from './Search'
 import axios from "axios";
 import Grid from '@mui/material/Grid';
@@ -20,10 +21,11 @@ const Home = () => {
                 setApiData(apiResponse)
                 setStreamingContent(apiResponse)
                 console.log(apiResponse)
-        })
+            }
+        )
     }
 
-    const filterByName = () =>{
+    const OrderedByName = () =>{
         const sortedContent = [...streamingContent]
         sortedContent.sort(function (a, b) {
             return a.title.localeCompare(b.title)
@@ -31,7 +33,7 @@ const Home = () => {
         setStreamingContent(sortedContent)
     }
 
-    const filterByYear = () =>{
+    const orderedByYear = () =>{
         const sortedContent = [...streamingContent]
         sortedContent.sort((a, b) => {
             if (a.releaseYear > b.releaseYear) {
@@ -45,7 +47,7 @@ const Home = () => {
         setStreamingContent(sortedContent)
     }
 
-    const filterByMovie = (inputData) =>{ 
+    const filterByMovieSerieOrYear = (inputData) =>{ 
         const {
             nativeEvent:{
                 target:{
@@ -54,41 +56,56 @@ const Home = () => {
             }
         } = inputData
 
-        const filterByMovieName = apiData.filter( contentType => {
-            return contentType.title.includes(value) || String(contentType.releaseYear).includes(value)
+        const inputFilter = apiData.filter( contentType => {
+            return contentType.title.toLowerCase().includes(value) || String(contentType.releaseYear).includes(value)
         })
 
-        setStreamingContent(filterByMovieName)
+        setStreamingContent(inputFilter)
     }
 
     return(
-            <Fragment>
-                <h1>Star Kitty+</h1>
-                <Search 
-                    onChangeEvent={filterByMovie}
-                />
-                <Button variant="contained" onClick={() => filterByName()}>Nombre</Button>
-                <Button variant="contained" onClick={() => filterByYear()}>Año</Button>
-                <Grid container sx={{ justifyContent: 'center' }}>
-                    <Grid item xs={10}>
-                        <Grid container spacing={2}>
-                            {
-                                streamingContent.map(singleContent =>{
-                                    return(
-                                        <Grid item lg={3} xs={12} md={4}>
-                                            <MovieCard 
-                                            container
-                                            contentImage={singleContent.images}
-                                            contentTitle={singleContent.title}
-                                            contentYear={singleContent.releaseYear}/>
-                                        </Grid>
-                                    )
-                                })
-                            }
-                        </Grid>
+        <Fragment>
+            <Grid container sx={{ justifyContent: 'center'}}>
+                <Grid item >
+                    <img
+                        sx={{ justifyContent: 'center'}}
+                        width={'120'}
+                        src={friendlyKittyIcon}
+                        alt={'kitty'}
+                    />
+                </Grid>
+            </Grid>
+            <Grid container sx={{ justifyContent: 'center'}}>
+                <Grid item >
+                    <Search onChangeEvent={filterByMovieSerieOrYear}/>
+                </Grid>
+            </Grid>
+            <Grid container sx={{ justifyContent: 'center'}}>
+                <Grid item>
+                    <Button variant="contained" sx={{margin: 3}} onClick={() => OrderedByName()}>Ordenar por nombre</Button>
+                    <Button variant="contained" onClick={() => orderedByYear()}>Ordenar por año</Button>
+                </Grid>
+            </Grid>
+            <Grid container sx={{ justifyContent: 'center' }}>
+                <Grid item xs={10}>
+                    <Grid container spacing={2}>
+                        {
+                            streamingContent.map(singleContent =>{
+                                return(
+                                    <Grid item lg={3} xs={12} md={4}>
+                                        <MovieCard 
+                                        container
+                                        contentImage={singleContent.images}
+                                        contentTitle={singleContent.title}
+                                        contentYear={singleContent.releaseYear}/>
+                                    </Grid>
+                                )
+                            })
+                        }
                     </Grid>
                 </Grid>
-            </Fragment>
+            </Grid>
+        </Fragment>
     )
 }
 
