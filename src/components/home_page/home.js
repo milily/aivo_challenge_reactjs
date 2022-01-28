@@ -28,12 +28,17 @@ const Home = () => {
         console.log(filterByProgramType)
     }
 
+    // const showAllContent = () =>{
+    //     return setMovies(apiData)
+    // }
 
     return(
             <Fragment>
                 <h1>HOLA</h1>
                 <Button variant="contained" onClick={() => filterByProgramType('movie')}>Pelicula</Button>
                 <Button variant="contained" onClick={() => filterByProgramType('series')}>Series</Button>
+                <Button variant="contained" onClick={() => {return setMovies(apiData)}}>Todo</Button>
+                <Grid container sx={{ justifyContent: 'center' }}></Grid>
                 <Grid container sx={{ justifyContent: 'center' }}>
                     <Grid item xs={10}>
                         <Grid container spacing={2}>
