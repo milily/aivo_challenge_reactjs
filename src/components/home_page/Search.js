@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 
-const Search = () => {
+const Search = ({onChangeEvent}) => {
+    
+
     return (
         <Paper
             component="form"
@@ -14,8 +16,12 @@ const Search = () => {
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="filtrar por película, serie o año"
                 inputProps={{ 'aria-label': 'search google maps' }}
+                onChange={onChangeEvent}
             />
-            <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
+            <IconButton type="submit" 
+                sx={{ p: '10px' }} 
+                aria-label="search"
+            >
                 <SearchIcon />
             </IconButton>
         </Paper>

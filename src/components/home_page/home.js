@@ -45,10 +45,28 @@ const Home = () => {
         setStreamingContent(sortedContent)
     }
 
+    const filterByMovie = (inputData) =>{ 
+        const {
+            nativeEvent:{
+                target:{
+                    value
+                }
+            }
+        } = inputData
+        console.log(value)
+
+        const filterByMovieName = apiData.filter( contentType => { return contentType?.title?.includes(value) })
+        setStreamingContent(filterByMovieName)
+        // const date = sandwichOrders.filter(sandwich => sandwich?.ordered?.includes(textFinder))
+        // setSandwichData(date)
+    }
+
     return(
             <Fragment>
                 <h1>HOLA</h1>
-                <Search />
+                <Search 
+                    onChangeEvent={filterByMovie}
+                />
                 <Button variant="contained" onClick={() => filterByName()}>Nombre</Button>
                 <Button variant="contained" onClick={() => filterByYear()}>Año</Button>
                 <Grid container sx={{ justifyContent: 'center' }}>
