@@ -30,7 +30,8 @@ const Home = () => {
     return(
             <Fragment>
                 <h1>HOLA</h1>
-                <Button variant="contained" onClick={filterByProgramType}>Pelicula</Button>
+                <Button variant="contained" onClick={() => filterByProgramType('movie')}>Pelicula</Button>
+                <Button variant="contained" onClick={() => filterByProgramType('series')}>Series</Button>
                 <Grid container sx={{ justifyContent: 'center' }}>
                     <Grid item xs={10}>
                         <Grid container spacing={2}>
