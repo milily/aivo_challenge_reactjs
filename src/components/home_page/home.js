@@ -53,17 +53,17 @@ const Home = () => {
                 }
             }
         } = inputData
-        console.log(value)
 
-        const filterByMovieName = apiData.filter( contentType => { return contentType?.title?.includes(value) })
+        const filterByMovieName = apiData.filter( contentType => {
+            return contentType.title.includes(value) || String(contentType.releaseYear).includes(value)
+        })
+
         setStreamingContent(filterByMovieName)
-        // const date = sandwichOrders.filter(sandwich => sandwich?.ordered?.includes(textFinder))
-        // setSandwichData(date)
     }
 
     return(
             <Fragment>
-                <h1>HOLA</h1>
+                <h1>Star Kitty+</h1>
                 <Search 
                     onChangeEvent={filterByMovie}
                 />

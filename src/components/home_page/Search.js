@@ -18,7 +18,7 @@ const Search = ({onChangeEvent}) => {
                 inputProps={{ 'aria-label': 'search google maps' }}
                 onChange={onChangeEvent}
             />
-            <IconButton type="submit" 
+            <IconButton
                 sx={{ p: '10px' }} 
                 aria-label="search"
             >
