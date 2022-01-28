@@ -2,14 +2,11 @@ import { Fragment } from 'react';
 import Login from './components/login/Login';
 import Home from './components/home_page/Home'
 import LogoutButton from './components/login/LogoutButton';
-import { blueGrey, red } from '@mui/material/colors';
 import './App.css';
 import { useAuth0 } from '@auth0/auth0-react'
 
 function App() {
   const {isAuthenticated, isLoading} = useAuth0()
-
-  const primary = red[400];
 
   if (isLoading){
     return <div><h1>Loading...</h1></div>

@@ -16,7 +16,6 @@ const LogoutButton = () =>{
                 Star Kitty+
                 </Box>
             </Typography>
-            <p sx={{ fontSize: 16 }}></p>
             <Grid item sx={{margin: 1}}>
                 <Button 
                     variant="contained" 

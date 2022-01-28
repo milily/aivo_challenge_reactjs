@@ -8,7 +8,6 @@ import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
-import LoginButton from './LoginButton'
 
 
 const LoginForm = () => {
@@ -37,7 +36,7 @@ const LoginForm = () => {
     return(
         <Box component="form"
             sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}
             noValidate
             autoComplete="off">
@@ -52,19 +51,19 @@ const LoginForm = () => {
                     endAdornment={
                     <InputAdornment position="end">
                         <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                        >
-                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                     </InputAdornment>
                     }
                     label="Password"
                 />
             </FormControl>
-            <LoginButton />
+            
         </Box>
     )
 }
