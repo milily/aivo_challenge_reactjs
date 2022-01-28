@@ -5,27 +5,25 @@ import MovieCard from "./MovieCard";
 import Button from '@mui/material/Button';
 
 const Home = () => {
-    const [movies, setMovies] = useState([])
     const [apiData, setApiData] = useState([])
-
+    const [streamingContent, setStreamingContent] = useState([])
+    
     useEffect(()=>{
-        moviesApiCall()
+        ApiContentCall()
     },[])
 
-    const moviesApiCall = () =>{
-        axios.get('movies.json')
+    const ApiContentCall = () =>{
+        axios.get('streamingContent.json')
             .then((response) => {
                 const apiResponse = response.data.entries
-                setMovies(apiResponse)
                 setApiData(apiResponse)
+                setStreamingContent(apiResponse)
         })
     }
 
-    const filterByProgramType = movieOrSerie =>{
-        console.log(movieOrSerie)
-        const filterByProgramType = apiData.filter( contentType => { return contentType.programType === movieOrSerie})
-        setMovies(filterByProgramType)
-        console.log(filterByProgramType)
+    const filterByProgramType = movieOrSeries =>{
+        const filterByProgramType = apiData.filter( contentType => { return contentType.programType === movieOrSeries})
+        setStreamingContent(filterByProgramType)
     }
 
     return(
@@ -33,19 +31,18 @@ const Home = () => {
                 <h1>HOLA</h1>
                 <Button variant="contained" onClick={() => filterByProgramType('movie')}>Pelicula</Button>
                 <Button variant="contained" onClick={() => filterByProgramType('series')}>Series</Button>
-                <Button variant="contained" onClick={() => {return setMovies(apiData)}}>Todo</Button>
-                <Grid container sx={{ justifyContent: 'center' }}></Grid>
+                <Button variant="contained" onClick={() => {return setStreamingContent(apiData)}}>Todo</Button>
                 <Grid container sx={{ justifyContent: 'center' }}>
                     <Grid item xs={10}>
                         <Grid container spacing={2}>
                             {
-                                movies.map(singleMovie =>{
+                                streamingContent.map(singleContent =>{
                                     return(
                                         <Grid item lg={3} xs={12} md={4}>
                                             <MovieCard 
                                             container
-                                            movieImage={singleMovie.images}
-                                            movieTitle={singleMovie.title}/>
+                                            contentImage={singleContent.images}
+                                            contentTitle={singleContent.title}/>
                                         </Grid>
                                     )
                                 })
