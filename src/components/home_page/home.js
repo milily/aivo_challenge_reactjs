@@ -18,20 +18,37 @@ const Home = () => {
                 const apiResponse = response.data.entries
                 setApiData(apiResponse)
                 setStreamingContent(apiResponse)
+                console.log(apiResponse)
         })
     }
 
-    const filterByProgramType = movieOrSeries =>{
-        const filterByProgramType = apiData.filter( contentType => { return contentType.programType === movieOrSeries})
-        setStreamingContent(filterByProgramType)
+    const filterByName = () =>{
+        const sortedContent = [...streamingContent]
+        sortedContent.sort(function (a, b) {
+            return a.title.localeCompare(b.title)
+        })
+        setStreamingContent(sortedContent)
+    }
+
+    const filterByYear = () =>{
+        const sortedContent = [...streamingContent]
+        sortedContent.sort(function (a, b) {
+            if (a.releaseYear > b.releaseYear) {
+                return -1;
+            }
+            if (b.releaseYear > a.releaseYear) {
+                return 1;
+            }
+            return 0;
+        })
+        setStreamingContent(sortedContent)
     }
 
     return(
             <Fragment>
                 <h1>HOLA</h1>
-                <Button variant="contained" onClick={() => filterByProgramType('movie')}>Pelicula</Button>
-                <Button variant="contained" onClick={() => filterByProgramType('series')}>Series</Button>
-                <Button variant="contained" onClick={() => {return setStreamingContent(apiData)}}>Todo</Button>
+                <Button variant="contained" onClick={() => filterByName()}>Nombre</Button>
+                <Button variant="contained" onClick={() => filterByYear()}>Año</Button>
                 <Grid container sx={{ justifyContent: 'center' }}>
                     <Grid item xs={10}>
                         <Grid container spacing={2}>
@@ -42,7 +59,8 @@ const Home = () => {
                                             <MovieCard 
                                             container
                                             contentImage={singleContent.images}
-                                            contentTitle={singleContent.title}/>
+                                            contentTitle={singleContent.title}
+                                            contentYear={singleContent.releaseYear}/>
                                         </Grid>
                                     )
                                 })

@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-const MovieCard = ({contentImage, contentTitle}) =>{
+const MovieCard = ({contentImage, contentTitle, contentYear}) =>{
 
     return(
         <Fragment>
@@ -19,6 +19,9 @@ const MovieCard = ({contentImage, contentTitle}) =>{
                         />
                         <Typography gutterBottom variant="h5" component="div">
                             {contentTitle}
+                        </Typography>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {contentYear}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
