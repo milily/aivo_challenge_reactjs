@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState} from "react";
+import Search from './Search'
 import axios from "axios";
 import Grid from '@mui/material/Grid';
 import MovieCard from "./MovieCard";
@@ -32,7 +33,7 @@ const Home = () => {
 
     const filterByYear = () =>{
         const sortedContent = [...streamingContent]
-        sortedContent.sort(function (a, b) {
+        sortedContent.sort((a, b) => {
             if (a.releaseYear > b.releaseYear) {
                 return -1;
             }
@@ -47,6 +48,7 @@ const Home = () => {
     return(
             <Fragment>
                 <h1>HOLA</h1>
+                <Search />
                 <Button variant="contained" onClick={() => filterByName()}>Nombre</Button>
                 <Button variant="contained" onClick={() => filterByYear()}>Año</Button>
                 <Grid container sx={{ justifyContent: 'center' }}>
