@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 
 const Home = () => {
     const [movies, setMovies] = useState([])
+    const [apiData, setApiData] = useState([])
 
     useEffect(()=>{
         moviesApiCall()
@@ -16,14 +17,15 @@ const Home = () => {
             .then((response) => {
                 const apiResponse = response.data.entries
                 setMovies(apiResponse)
+                setApiData(apiResponse)
         })
     }
 
-    const filterByProgramType = () =>{
-        console.log('apiiiiiiii',movies)
-        const filterByMovie = movies.filter(movie => { return movie.programType === 'movie'})
-        setMovies(filterByMovie)
-        console.log(filterByMovie)
+    const filterByProgramType = movieOrSerie =>{
+        console.log(movieOrSerie)
+        const filterByProgramType = apiData.filter( contentType => { return contentType.programType === movieOrSerie})
+        setMovies(filterByProgramType)
+        console.log(filterByProgramType)
     }
 
 
