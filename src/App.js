@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 //Components
 import Login from './components/login/LoginSite';
-import Home from './components/home_page/Home'
+import Home from './components/homePage/Home'
 import LogoutButton from './components/login/LogoutButton';
 //Styles
 import './App.css';
