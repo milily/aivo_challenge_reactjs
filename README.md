@@ -1,5 +1,7 @@
 # Star Kitty+ Streaming Plataform  (Aivo Challenge with ReactJS)
 
+url: [https://aivochallengereactjs.netlify.app](https://aivochallengereactjs.netlify.app)
+
 In this project I built a simple Streaming Platform using a json file in order to do
 the request with Axios and render all the movies or series by showing a card with the movie's or
 serie's image and title.<br/>
