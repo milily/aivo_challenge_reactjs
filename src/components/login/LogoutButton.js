@@ -23,7 +23,7 @@ const LogoutButton = () =>{
                 <Button 
                     variant="contained" 
                     startIcon={<LogoutIcon />}
-                    onClick={() => logout({returnTo: window.location.origen})}>Cerrar Sesión</Button>
+                    onClick={() => logout({redirecTo: window.location.origen})}>Cerrar Sesión</Button>
             </Grid>
         </Grid>
     ) 
