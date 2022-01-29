@@ -1,7 +1,10 @@
 import React, { Fragment} from "react";
+//Components
 import LoginButton from "./LoginButton";
-import friendlyKittyIcon from '../../assets/images/friendly-kitten-icon.png'
 import LoginForm from "./LoginForm";
+//Images or Logo
+import friendlyKittyIcon from '../../assets/images/friendly-kitten-icon.png'
+//MUI Components
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';

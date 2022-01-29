@@ -1,10 +1,15 @@
 import React, { Fragment, useEffect, useState} from "react";
-import friendlyKittyIcon from '../../assets/images/friendly-kitten-icon.png'
-import Search from './Search'
-import axios from "axios";
+//MUI Components
 import Grid from '@mui/material/Grid';
-import MovieCard from "./MovieCard";
 import Button from '@mui/material/Button';
+//Images or Logo
+import friendlyKittyIcon from '../../assets/images/friendly-kitten-icon.png'
+//Components
+import CardContents from "./Card";
+import Search from './Search'
+//Axios for API call
+import axios from "axios";
+
 
 const Home = () => {
     const [apiData, setApiData] = useState([])
@@ -25,7 +30,7 @@ const Home = () => {
         )
     }
 
-    const OrderedByName = () =>{
+    const orderedByName = () =>{
         const sortedContent = [...streamingContent]
         sortedContent.sort(function (a, b) {
             return a.title.localeCompare(b.title)
@@ -77,12 +82,12 @@ const Home = () => {
             </Grid>
             <Grid container sx={{ justifyContent: 'center'}}>
                 <Grid item >
-                    <Search onChangeEvent={filterByMovieSerieOrYear}/>
+                    <Search onChangeEvent={filterByMovieSerieOrYear} /** method prop for Search component*/ />
                 </Grid>
             </Grid>
             <Grid container sx={{ justifyContent: 'center'}}>
                 <Grid item>
-                    <Button variant="contained" sx={{margin: 3}} onClick={() => OrderedByName()}>Ordenar por nombre</Button>
+                    <Button variant="contained" sx={{margin: 3}} onClick={() => orderedByName()}>Ordenar por nombre</Button>
                     <Button variant="contained" onClick={() => orderedByYear()}>Ordenar por año</Button>
                 </Grid>
             </Grid>
@@ -93,11 +98,12 @@ const Home = () => {
                             streamingContent.map(singleContent =>{
                                 return(
                                     <Grid item lg={3} xs={12} md={4}>
-                                        <MovieCard 
-                                        container
-                                        contentImage={singleContent.images}
-                                        contentTitle={singleContent.title}
-                                        contentYear={singleContent.releaseYear}/>
+                                        <CardContents
+                                            container
+                                            contentImage={singleContent.images} /**Image prop for Card component*/
+                                            contentTitle={singleContent.title} /**Title prop for Card component*/
+                                            contentYear={singleContent.releaseYear} /**Release year prop for Card component*/
+                                        />
                                     </Grid>
                                 )
                             })

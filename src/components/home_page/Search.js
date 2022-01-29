@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+//MUI Components
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';

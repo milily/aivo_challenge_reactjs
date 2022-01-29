@@ -1,10 +1,13 @@
 import React from "react";
+//Auth0
+import { useAuth0 } from '@auth0/auth0-react'
+//MUI Components
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { useAuth0 } from '@auth0/auth0-react'
+
 
 const LogoutButton = () =>{
     const { logout } = useAuth0()

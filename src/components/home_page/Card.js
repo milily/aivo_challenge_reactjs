@@ -1,11 +1,12 @@
-import React, { Fragment, useEffect, useState} from "react";
+import React, { Fragment} from "react";
+//MUI Components
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-const MovieCard = ({contentImage, contentTitle, contentYear}) =>{
+const CardContents = ({contentImage, contentTitle, contentYear}) =>{
 
     return(
         <Fragment>
@@ -30,4 +31,4 @@ const MovieCard = ({contentImage, contentTitle, contentYear}) =>{
     )
 }
 
-export default MovieCard
+export default CardContents
