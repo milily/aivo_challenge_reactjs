@@ -61,7 +61,7 @@ const Home = () => {
         } = inputData
 
         const inputFilter = apiData.filter( contentType => {
-            return contentType.title.toLowerCase().includes(value) || String(contentType.releaseYear).includes(value)
+            return contentType.title.toLowerCase().includes(value.toLowerCase()) || String(contentType.releaseYear).includes(value.toLowerCase())
         })
 
         setStreamingContent(inputFilter)
