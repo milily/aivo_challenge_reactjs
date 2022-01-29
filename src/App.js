@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 //Components
-import Login from './components/login/Login';
+import Login from './components/login/LoginSite';
 import Home from './components/home_page/Home'
 import LogoutButton from './components/login/LogoutButton';
 //Styles
