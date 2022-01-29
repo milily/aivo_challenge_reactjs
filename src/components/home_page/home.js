@@ -25,7 +25,6 @@ const Home = () => {
                 const apiResponse = response.data.entries
                 setApiData(apiResponse)
                 setStreamingContent(apiResponse)
-                console.log(apiResponse)
             }
         )
     }
@@ -95,10 +94,11 @@ const Home = () => {
                 <Grid item xs={10}>
                     <Grid container spacing={2}>
                         {
-                            streamingContent.map(singleContent =>{
+                            streamingContent.map((singleContent,index) =>{
                                 return(
-                                    <Grid item lg={3} xs={12} md={4}>
+                                    <Grid item key={index} lg={3} xs={12} md={4}>
                                         <CardContents
+                                            
                                             container
                                             contentImage={singleContent.images} /**Image prop for Card component*/
                                             contentTitle={singleContent.title} /**Title prop for Card component*/
