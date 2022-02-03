@@ -15,7 +15,7 @@ const Login = () => {
             <Grid container sx={{ justifyContent: 'center'}}>
                 <Grid item>
                     <Typography component="div">
-                        <Box sx={{ fontFamily: 'Monospace', fontSize: '5rem', fontWeight: 'bold' }}>
+                        <Box sx={{ fontFamily: 'Monospace', textAlign: 'center', fontSize: '5rem', fontWeight: 'bold', lineHeight: 'normal', marginBottom: 5 }}>
                             Star Kitty+
                         </Box>
                     </Typography>
