@@ -20,7 +20,7 @@ const LogoutButton = () =>{
                 </Box>
             </Typography>
             <Grid item sx={{margin: 1}}>
-                <Button 
+                <Button
                     variant="contained" 
                     startIcon={<LogoutIcon />}
                     onClick={() => logout({redirecTo: window.location.origen})}>Cerrar Sesión</Button>

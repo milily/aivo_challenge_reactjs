@@ -17,14 +17,14 @@ function App() {
     }
 
     return (
-        <Fragment>
+        <div>
             {isAuthenticated ? (
                   <Fragment>
                       <LogoutButton />
                       <Home />
                   </Fragment>
                 ): <Login />}
-        </Fragment>
+        </div>
     );
 }
 

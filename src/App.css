@@ -1,6 +1,12 @@
 html, body{
-    height: 100%;
     margin:0px;
     padding:0px;
-    background-color: rgb(161, 158, 158);
+    background-color: lightgrey;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
