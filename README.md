@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Star Kitty+ Streaming Plataform  (Aivo Challenge with ReactJS)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+url: [https://aivochallengereactjs.netlify.app](https://aivochallengereactjs.netlify.app)
 
-## Available Scripts
+In this project I built a simple Streaming Platform using a json file in order to do
+the request with Axios and render all the movies or series by showing a card with the movie's or
+serie's image and title.<br/>
+This project has two main sections:  LOGIN and HOME.
+### Login
+To log in you just need to click the 'Iniciar Sesión' button and you will be redirect to authenticate
+your profile with your Google acount.
+### Home 
+After authentication, home component will render all the movies or series as a response from the API call. </br>
+This component has two buttons, first button 'Ordenar por nombre' is for ordering by alphabetical order and
+second button 'Ordenar por año' is for ordering (descending order) by release year. And this component also has a searching input which filters by movie's or serie's name and by release year.
+### Design
+I use a simple design and components from MUI. </br>
+This project is deployed using Netlify, you can visit the url: [https://aivochallengereactjs.netlify.app](https://aivochallengereactjs.netlify.app)
 
-In the project directory, you can run:
+## Quick Start
+1. Clone repository
+2. Select folder cloned
+3. ` $ yarn install `
+4. ` $ yarn start ` 
 
-### `npm start`
-
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- ReactJS v17.0.2
+- Material UI v5.3.1
+- Axios v0.25.0
+- Auth0-react v11.7.1
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### WIP
+Im currently working on responsive view so please visit the site from laptop/desktop computer.</br>
+And there is an issue with the logout button and Netlify because I'm using more than one url in the allowed logout field from Auth0, so if you're running this app from [http://localhost:3000](http://localhost:3000), after logging out you will be redirect to [https://aivochallengereactjs.netlify.app](https://aivochallengereactjs.netlify.app) but if you're directly visiting [https://aivochallengereactjs.netlify.app](https://aivochallengereactjs.netlify.app) after logging out you will be redirect to [https://aivochallengereactjs.netlify.app](https://aivochallengereactjs.netlify.app)
