@@ -69,7 +69,7 @@ const Home = () => {
 
     return(
         <Fragment>
-            <Grid container sx={{ justifyContent: 'center'}}>
+            <Grid container sx={{ justifyContent: 'center', marginTop: '50px'}}>
                 <Grid item >
                     <img
                         sx={{ justifyContent: 'center'}}
@@ -79,7 +79,7 @@ const Home = () => {
                     />
                 </Grid>
             </Grid>
-            <Grid container sx={{ width: '100%', justifyContent: 'center'}} xs={12}>
+            <Grid container sx={{ width: '100%', justifyContent: 'center'}}>
                 <Grid item >
                     <Search onChangeEvent={filterByMovieSerieOrYear} /** method prop for Search component*/ />
                 </Grid>
