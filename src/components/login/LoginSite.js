@@ -16,7 +16,7 @@ const Login = () => {
                 <Grid item>
                     <Typography component="div">
                         <Box sx={{ fontFamily: 'Monospace', fontSize: '5rem', fontWeight: 'bold' }}>
-                        Star Kitty+
+                            Star Kitty+
                         </Box>
                     </Typography>
                 </Grid>

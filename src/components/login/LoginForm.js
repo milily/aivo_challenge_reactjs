@@ -37,32 +37,38 @@ const LoginForm = () => {
     return(
         <Box component="form"
             sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                '& .MuiTextField-root': { display: 'flex', m: 1, width: '25ch'},
             }}
             noValidate
             autoComplete="off">
-            <TextField id="outlined-basic" label="Usuario" variant="outlined" />
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                <OutlinedInput
-                    id="outlined-adornment-password"
-                    type={values.showPassword ? 'text' : 'password'}
-                    value={values.password}
-                    onChange={handleChange('password')}
-                    endAdornment={
-                    <InputAdornment position="end">
-                        <IconButton
-                            aria-label="toggle password visibility"
-                            onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                            edge="end"
-                          >
-                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                    </InputAdornment>
-                    }
-                    label="Password"
-                />
+            <TextField 
+            id="outlined-basic" 
+            label="Usuario" 
+            variant="outlined" 
+            sx={{display: 'flex'}}/>
+            <FormControl 
+                sx={{  display: 'flex', m: 1, width: '25ch' }} 
+                variant="outlined">
+                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <OutlinedInput
+                        id="outlined-adornment-password"
+                        type={values.showPassword ? 'text' : 'password'}
+                        value={values.password}
+                        onChange={handleChange('password')}
+                        endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                edge="end"
+                              >
+                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                        </InputAdornment>
+                        }
+                        label="Password"
+                    />
             </FormControl>
         </Box>
     )

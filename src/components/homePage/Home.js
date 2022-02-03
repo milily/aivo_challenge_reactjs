@@ -79,7 +79,7 @@ const Home = () => {
                     />
                 </Grid>
             </Grid>
-            <Grid container sx={{ width: '100%', justifyContent: 'center'}} sm={12}>
+            <Grid container sx={{ width: '100%', justifyContent: 'center'}} xs={12}>
                 <Grid item >
                     <Search onChangeEvent={filterByMovieSerieOrYear} /** method prop for Search component*/ />
                 </Grid>
