@@ -79,26 +79,27 @@ const Home = () => {
                     />
                 </Grid>
             </Grid>
-            <Grid container sx={{ justifyContent: 'center'}}>
+            <Grid container sx={{ width: '100%', justifyContent: 'center'}} sm={12}>
                 <Grid item >
                     <Search onChangeEvent={filterByMovieSerieOrYear} /** method prop for Search component*/ />
                 </Grid>
             </Grid>
             <Grid container sx={{ justifyContent: 'center'}}>
                 <Grid item>
-                    <Button variant="contained" sx={{margin: 3}} onClick={() => orderedByName()}>Ordenar por nombre</Button>
-                    <Button variant="contained" onClick={() => orderedByYear()}>Ordenar por año</Button>
+                    <Button variant="contained" sx={{marginTop: 3, marginRight: 1}} onClick={() => orderedByName()}>Ordenar por nombre</Button>
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" sx={{marginTop: 3, marginBottom: 2}} onClick={() => orderedByYear()}>Ordenar por año</Button>
                 </Grid>
             </Grid>
             <Grid container sx={{ justifyContent: 'center' }}>
-                <Grid item xs={10}>
+                <Grid item xs={9}>
                     <Grid container spacing={2}>
                         {
                             streamingContent.map((singleContent,index) =>{
                                 return(
-                                    <Grid item key={index} lg={3} xs={12} md={4}>
+                                    <Grid item key={index} lg={3} xs={12} md={4} sm={12}>
                                         <CardContents
-                                            
                                             container
                                             contentImage={singleContent.images} /**Image prop for Card component*/
                                             contentTitle={singleContent.title} /**Title prop for Card component*/
